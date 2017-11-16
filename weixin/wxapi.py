@@ -2,6 +2,7 @@
 from django.http import HttpResponseRedirect
 from urllib import quote
 from utils import contrib
+from book import settings
 import json
 
 appid = settings.APP_ID
