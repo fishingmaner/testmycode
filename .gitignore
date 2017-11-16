@@ -1,0 +1,7 @@
+migrations/
+*.pyc
+media/upload
+book/settings.py
+nginx.conf
+wsgi.ini
+get_wxaccess_token.py
