@@ -53,7 +53,7 @@ class Rooms(models.Model):
     partner = models.ForeignKey(Partner, verbose_name=u'所属餐馆')
     name = models.CharField(max_length=30, verbose_name=u'座号/房间号')
     capacity = models.IntegerField(default=0, verbose_name=u'可容纳人数')
-    guid = models.CharField(max_length=100, verbose_name=u'二维码编号')
+    guid = models.CharField(null=True, blank=True, default='', max_length=100, verbose_name=u'二维码编号')
     class Meta:
         verbose_name = u'房间'
     def __str__(self):
@@ -64,7 +64,7 @@ class Product(models.Model):
     name = models.CharField(max_length=30, verbose_name=u'菜名')
     price = models.FloatField(default=0.0, verbose_name=u'价格')
     off = models.FloatField(default=0.0, verbose_name=u'折扣')
-    img = models.ImageField(default='', upload_to='upload/%Y/%m', verbose_name=u'菜品图样', storage=ImageStorage())
+    img = models.ImageField(null=True, blank=True, default='', upload_to='upload/%Y/%m', verbose_name=u'菜品图样', storage=ImageStorage())
     type = models.ForeignKey(ProductType, verbose_name=u'菜品类型')
     recommend = models.IntegerField(default=0, verbose_name=u'推荐')
     products =  models.CharField(default='', blank=True, max_length=100, verbose_name=u'标准组合')
