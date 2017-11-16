@@ -27,7 +27,6 @@ def rendertpl(request, tpl, content = None):
     try:
         return render(request, 'weui/'+ tpl, content)
     except Exception,e:
-        print e
         return render(request, 'weixin/' + tpl, content)
 
 def list(request):

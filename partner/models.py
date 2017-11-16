@@ -64,7 +64,7 @@ class Product(models.Model):
     name = models.CharField(max_length=30, verbose_name=u'菜名')
     price = models.FloatField(default=0.0, verbose_name=u'价格')
     off = models.FloatField(default=0.0, verbose_name=u'折扣')
-    img = models.ImageField(upload_to='upload/%Y/%m', verbose_name=u'菜品图样', storage=ImageStorage())
+    img = models.ImageField(default='', upload_to='upload/%Y/%m', verbose_name=u'菜品图样', storage=ImageStorage())
     type = models.ForeignKey(ProductType, verbose_name=u'菜品类型')
     recommend = models.IntegerField(default=0, verbose_name=u'推荐')
     products =  models.CharField(default='', blank=True, max_length=100, verbose_name=u'标准组合')
