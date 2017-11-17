@@ -21,6 +21,8 @@ def order_state():
     )
 
 def get_img_url(img, width=0, height=0):
+    if img is None or img == '':
+        return ''
     nodes = str(img).split('/')
     if width == 0 or height == 0:
         return ".." + settings.MEDIA_URL + str(img)
