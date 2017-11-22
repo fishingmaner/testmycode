@@ -193,7 +193,7 @@ def booking(request):
 
     pid = request.GET['id']
     partner = Partner.objects.get(id=pid)
-    partner.img_url = get_img_url(partner.img, 100, 100)
+    partner.img_url = get_img_url(partner.img, 500, 200)
     context = {}
     products = []
     products = Product.objects.filter(partner=partner.id)
